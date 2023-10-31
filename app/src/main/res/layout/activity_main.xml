@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Choose Patient Size"
+            android:gravity="center"/>
+        
+        <TextView
+            android:id="@+id/btAdult"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Adult"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:background="@color/blue_dark"
+            android:layout_gravity="center"
+            android:onClick="chooseAdult"/>
+
+        <TextView
+            android:id="@+id/btPediatric"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Pediatric"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:background="@color/blue_dark"
+            android:layout_gravity="center"
+            android:onClick="choosePediatric"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Choose Ventilation Mode"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/btCMV"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="CMV"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:background="@color/blue_dark"
+            android:layout_gravity="center"
+            android:onClick="chooseCMV"/>
+
+        <TextView
+            android:id="@+id/btSIMV"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="SIMV"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:background="@color/blue_dark"
+            android:layout_gravity="center"
+            android:onClick="chooseSIMV"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.8"
+            android:text="Set Ventilation Parameters"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Volumen"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvVolumeValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="500"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="ml"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btPlusVolume"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Más"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:onClick="plusVolume"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/btMinusVolume"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Menos"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:onClick="minusVolume"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Flujo pico"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvFlowValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="10"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="litros/min"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btPlusFlow"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Más"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:onClick="plusFlow"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/btMinusFlow"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Menos"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:onClick="minusFlow"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Frecuencia Respiratoria"
+                        android:gravity="center"
+                        android:textSize="8sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvFrequencyValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="5"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="resp/min"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btPlusFrequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Más"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:onClick="plusFrequency"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/btMinusFrequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Menos"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:onClick="minusFrequency"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="PEEP"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvPeepValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="0"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="cmH2O"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btPlusPEEP"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Más"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:onClick="plusPeep"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/btMinusPEEP"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Menos"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:onClick="minusPeep"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Plateu"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvPlateuValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="0"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="ms"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btPlusPlateu"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Más"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:onClick="plusPlateu"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/btMinusPlateu"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Menos"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:onClick="minusPlateu"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="FiO2"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvFio2Value"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="21"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="%"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btPlusFio2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Más"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:onClick="plusFio2"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/btMinusFio2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Menos"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:onClick="minusFio2"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Perfil de Flujo"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvPerfilValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="1"
+                        android:gravity="center"
+                        android:textSize="25sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text=""
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/btPlusPerfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Más"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:onClick="plusPerfil"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/btMinusPerfil"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Menos"
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:onClick="minusPerfil"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text=""
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text=""
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text=""
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text=""
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="5dp"
+                        android:text=""
+                        android:gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:background="@color/blue_dark"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btNext"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center"
+            android:text="Next"
+            android:onClick="callNext"/>
+    </LinearLayout>
+
+
+
+    
+
+
+</LinearLayout>
